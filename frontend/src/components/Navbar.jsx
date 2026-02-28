@@ -25,7 +25,7 @@ const Navbar = () => {
                             className="w-10 h-10 group-hover:drop-shadow-[0_0_15px_rgba(124,58,237,0.5)] transition-all duration-300"
                         />
                         <span className="text-xl font-bold bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent tracking-tight">
-                            Loan Risk Guard
+                            Loan Risk Guard AI
                         </span>
                     </Link>
 

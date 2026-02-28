@@ -8,7 +8,7 @@ const Footer = () => {
 
                     {/* Brand */}
                     <div>
-                        <h3 className="text-lg font-bold text-white mb-4 tracking-tight">RiskGuard AI</h3>
+                        <h3 className="text-lg font-bold text-white mb-4 tracking-tight">Loan Risk Guard AI</h3>
                         <p className="text-zinc-400 text-sm font-light">
                             Advanced Machine Learning assessments for financial safety and loan eligibility.
                         </p>
@@ -36,7 +36,7 @@ const Footer = () => {
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-white/5 text-center text-zinc-500 font-light text-sm">
-                    © {new Date().getFullYear()} RiskGuard AI. All rights reserved.
+                    © {new Date().getFullYear()} Loan Risk Guard AI. All rights reserved.
                 </div>
             </div>
         </footer>

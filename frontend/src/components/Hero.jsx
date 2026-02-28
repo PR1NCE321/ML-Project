@@ -59,8 +59,8 @@ const Hero = () => {
                             desc: "Get real-time probability scores processed by our optimized backend pipeline."
                         },
                         {
-                            icon: <Shield className="text-green-400" size={32} />,
-                            title: "RiskGuard Protocol",
+                            icon: <Shield className="text-emerald-400" size={32} />,
+                            title: "Risk Guard Protocol",
                             desc: "Specialized in detecting high-risk outliers that traditional models miss."
                         },
                         {

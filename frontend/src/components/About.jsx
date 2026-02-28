@@ -13,7 +13,7 @@ const About = () => {
 
                 <div className="prose prose-invert prose-lg text-zinc-400 font-light leading-relaxed">
                     <p>
-                        RiskGuard AI utilizes a sophisticated <strong>Logistic Regression</strong> model with balanced class weights to identify potential loan defaults. Traditional models often favor the majority class (non-defaulters), missing critical risk factors.
+                        Loan Risk Guard AI utilizes a sophisticated <strong>Logistic Regression</strong> model with balanced class weights to identify potential loan defaults. Traditional models often favor the majority class (non-defaulters), missing critical risk factors.
                     </p>
 
                     <h3 className="text-white mt-8 mb-4">The Algorithm</h3>
