@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Activity, Home, Info, ShieldCheck } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Activity, Home, Info, ShieldCheck, Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
     const location = useLocation();
 
     const isActive = (path) => location.pathname === path;
@@ -53,12 +55,48 @@ const Navbar = () => {
                         ))}
                     </div>
 
-                    {/* Mobile Menu Button (Placeholder) */}
-                    <div className="md:hidden">
-                        {/* Simple mobile menu trigger could go here */}
+                    {/* Mobile Menu Button */}
+                    <div className="md:hidden flex items-center">
+                        <button
+                            onClick={() => setIsOpen(!isOpen)}
+                            className="p-2 text-zinc-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors focus:outline-none"
+                            aria-label="Toggle menu"
+                        >
+                            {isOpen ? <X size={24} /> : <Menu size={24} />}
+                        </button>
                     </div>
                 </div>
             </div>
+
+            {/* Mobile Nav Dropdown */}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                        className="md:hidden border-t border-white/5 bg-black/60 backdrop-blur-2xl overflow-hidden"
+                    >
+                        <div className="px-4 py-6 space-y-3">
+                            {navItems.map((item) => (
+                                <Link
+                                    key={item.name}
+                                    to={item.path}
+                                    onClick={() => setIsOpen(false)}
+                                    className={`flex items-center space-x-3 w-full p-4 rounded-xl text-base font-medium transition-all ${isActive(item.path)
+                                            ? 'bg-violet-500/10 text-violet-400 border border-violet-500/20 shadow-inner'
+                                            : 'text-zinc-400 hover:text-white hover:bg-white/5 border border-transparent'
+                                        }`}
+                                >
+                                    {item.icon}
+                                    <span>{item.name}</span>
+                                </Link>
+                            ))}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     );
 };
